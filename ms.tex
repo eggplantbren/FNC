@@ -1,0 +1,89 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage[left=1.5cm, right=1.5cm, bottom=2cm, top=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{natbib}
+\usepackage{tikz}
+\newcommand{\given}{\,|\,}
+
+\title{}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+%\abstract{}
+
+% Need this after the abstract
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+
+Let $\boldsymbol{x}_i \in \mathcal{X}$ be the microscopic details of the history
+of star
+$i$ in the universe, including life (if any) and conscious beings (if any)
+that arise around it. Presumably $\boldsymbol{x}_i$ is a point in a very high
+dimensional space $\mathcal{X}$, perhaps analogous to a phase space in
+statistical mechanics.
+Define the following proposition:
+\begin{align}
+L\textnormal{:}\quad\textnormal{Life arises around star}~i. 
+\end{align}
+This defines $L$ as a subset of the space of possible micro-histories of a star.
+We can define a smaller subset for at least one conscious observer,
+whose details we currently omit. This subset relates to any conscious observer
+regardless of the contents of their consciousness:
+\begin{align}
+O\textnormal{:}
+\quad\textnormal{At least one conscious observer arises around star}~i. 
+\end{align}
+Of course, $O$ implies $L$, so we have $O \subset L \subset \mathcal{X}$.
+Finally, we define the narrowest possible subset of $\mathcal{X}$ that we
+will consider, which is
+\begin{align}
+B\textnormal{:}
+\quad\textnormal{Brendon Brewer's memory state is instantiated around star}~i. 
+\end{align}
+$B$ includes the fact of being at $t=13.8$ Gyr, and being around a G star.
+So far, all propositions about $\boldsymbol{x}_i$ have been nested, i.e.,
+$B \implies O \implies L$.
+Hypothetical alternative observers around $M$ stars are within $O$ (and thus
+also within $L$), but are mutually exclusive with $B$.
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=1]
+
+  % Ambient space X
+  \draw[thick] (0,0) rectangle (12,7);
+  \node[anchor=north west] at (0.2,6.8) {$\mathcal{X}$};
+
+  % L subset
+  \draw[thick,blue] (1,1) rectangle (11,6);
+  \node[anchor=north west,blue] at (1.2,5.8) {$L$};
+
+  % O subset
+  \draw[thick,red] (2,1.5) rectangle (10,5.5);
+  \node[anchor=north west,red] at (2.2,5.3) {$O$};
+
+  % B subset (your microhistory)
+  \draw[thick,green!60!black] (3,2) rectangle (7,4.5);
+  \node[anchor=north west,green!60!black] at (3.2,4.3) {$B$};
+
+  % O_M subset (M-star observers)
+  \draw[thick,purple] (7.5,2) rectangle (9.5,4.5);
+  \node[anchor=north west,purple] at (7.7,4.3) {$O_M$};
+
+\end{tikzpicture}
+\caption{The full space $\mathcal{X}$ of possible micro-histories of a given
+star (star $i$), and various subsets of the space. Volumes are definitely
+not to scale!\label{fig:sets}}
+\end{figure}
+
+\end{document}
+
