@@ -52,8 +52,9 @@ B\textnormal{:}
 $B$ includes the fact of being at $t=13.8$ Gyr, and being around a G star.
 So far, all propositions about $\boldsymbol{x}_i$ have been nested, i.e.,
 $B \implies O \implies L$.
-Hypothetical alternative observers around $M$ stars are within $O$ (and thus
-also within $L$), but are mutually exclusive with $B$.
+Hypothetical alternative observers around M stars are within $O$ (and thus
+also within $L$), but are mutually exclusive with $B$. We will call the
+subset with M star observers $O_M$.
 
 \begin{figure}
 \centering
@@ -72,7 +73,7 @@ also within $L$), but are mutually exclusive with $B$.
   \node[anchor=north west,red] at (2.2,5.3) {$O$};
 
   % B subset (your microhistory)
-  \draw[thick,green!60!black] (3,2) rectangle (7,4.5);
+  \draw[thick,green!60!black] (3,2) rectangle (4.0,4.5);
   \node[anchor=north west,green!60!black] at (3.2,4.3) {$B$};
 
   % O_M subset (M-star observers)
@@ -84,6 +85,23 @@ also within $L$), but are mutually exclusive with $B$.
 star (star $i$), and various subsets of the space. Volumes are definitely
 not to scale!\label{fig:sets}}
 \end{figure}
+
+Now let the universe contain $N_G$ G stars and $N_M$ M stars.
+For simplicity, we ignore other types of star.
+The entire detailed history of the universe can be obtained by having a vector
+$\boldsymbol{x}_i$ for each star, i.e., $i \in \{1, ..., N\}$
+where $N = N_G + N_M$:
+\begin{align}
+\textnormal{History of the universe} &= \left\{\boldsymbol{x}_i\right\}_{i=1}^N.
+\end{align}
+We now need to assign a prior distribution over the history of the universe,
+conditional on some parameters, so we can infer the parameters.
+Call the parameters, collectively, $\boldsymbol{\theta}$.
+This prior may be factorised using conditional independence:
+\begin{align}
+p(\boldsymbol{x}_1, ..., \boldsymbol{x}_N \given \boldsymbol{\theta})
+    &= \prod_{i=1}^N p(\boldsymbol{x}_i \given \boldsymbol{\theta}).
+\end{align}
 
 \end{document}
 
