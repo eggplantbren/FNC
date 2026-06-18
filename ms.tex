@@ -86,22 +86,46 @@ star (star $i$), and various subsets of the space. Volumes are definitely
 not to scale!\label{fig:sets}}
 \end{figure}
 
-Now let the universe contain $N_G$ G stars and $N_M$ M stars.
-For simplicity, we ignore other types of star.
-The entire detailed history of the universe can be obtained by having a vector
-$\boldsymbol{x}_i$ for each star, i.e., $i \in \{1, ..., N\}$
-where $N = N_G + N_M$:
+\section*{An Individual Star}
+Consider an individual star which may be type $G$ or $M$.
+Suppose its microhistory satisfies $L$ with probability $\theta_G$ if it is
+a G star, or with probability $\theta_M$ if it is an M star.
+Conditional on being within $L$, it develops at least one observer with
+probability $\phi_G$ if it is a G star or $\phi_M$ if it is an M star.
+Overall, we have the product rule along chains (which resembles the Drake
+equation) giving
 \begin{align}
-\textnormal{History of the universe} &= \left\{\boldsymbol{x}_i\right\}_{i=1}^N.
+P(B \given \boldsymbol{\theta}) &= \theta_G \phi_G \epsilon
 \end{align}
-We now need to assign a prior distribution over the history of the universe,
-conditional on some parameters, so we can infer the parameters.
-Call the parameters, collectively, $\boldsymbol{\theta}$.
-This prior may be factorised using conditional independence:
+for a G star or
 \begin{align}
-p(\boldsymbol{x}_1, ..., \boldsymbol{x}_N \given \boldsymbol{\theta})
-    &= \prod_{i=1}^N p(\boldsymbol{x}_i \given \boldsymbol{\theta}).
+P(B \given \boldsymbol{\theta}) &= 0
 \end{align}
+for an M star.
+Therefore the probability of $\neg B$ for an individual star is
+\begin{align}
+P(\neg B \given \boldsymbol{\theta}) &= 1 - \theta_G \phi_G \epsilon
+\end{align}
+for a G star or 1 for an M star.
+
+The probability of no occurrence of Brendon anywhere is
+\begin{align}
+P(\textnormal{no Brendon anywhere} \given \boldsymbol{\theta})
+    &= \left(1 - \theta_G \phi_G \epsilon\right)^{N_G}.
+\end{align}
+Thus, the probability of at least one Brendon is
+\begin{align}
+P(\textnormal{at least one Brendon} \given \boldsymbol{\theta})
+    &= 1 - \left(1 - \theta_G \phi_G \epsilon\right)^{N_G}.
+\end{align}
+We will work in the regime where $\theta_G\phi_G\epsilon$ is tiny,
+giving an approximation
+\begin{align}
+P(\textnormal{at least one Brendon} \given \boldsymbol{\theta})
+    &\approx N_G \theta_G \phi_G \epsilon.
+\end{align}
+This is the FNC likelihood.
+
 
 \end{document}
 
