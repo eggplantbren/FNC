@@ -24,9 +24,40 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{8pt}
 
-Let $\boldsymbol{x}_i \in \mathcal{X}$ be the microscopic details of the history
-of star
-$i$ in the universe, including life (if any) and conscious beings (if any)
+Let $\boldsymbol{x}_i \in \mathcal{X}$ be the microscopic details of the
+history of star
+$i$ in the universe over time $t$. There is a region of $\mathcal{X}$ indicating
+that life exists at some point during the history.
+Call that region $L$. There is another region
+$O$ indicating that conscious observers exist at some point during the history.
+Conscious observers have some memories that may or may not equal mine.
+Call that region $O$. It is a subset of
+$L$. Within $L$, there is a tiny subregion $B$ indicating that Brendon exists.
+
+Now consider the probability that a trajectory $\boldsymbol{x}(t)$ is inside
+$B$. This is three subsets in. So we can factorise it using the chain-product
+rule.
+\begin{align}
+P(B) &= P(L)P(O \given L)P(B \given O).
+\end{align}
+We can parameterise it this way:
+\begin{align}
+P(B) &= P(L)P(O \given L)P(B \given O) \\
+     &= \theta\phi\epsilon,
+\end{align}
+But this leads to extreme self indication.
+
+What if I set the marginal probability of $B$ to be $\epsilon$, rather than
+the conditional probability. Then we have
+\begin{align}
+\epsilon &= \theta\phi P(B \given O) \\
+\therefore
+P(B \given O) &= \frac{\epsilon}{\theta\phi}.
+\end{align}
+This would completely cancel any indication factors but seems wrong.
+
+
+, including life (if any) and conscious beings (if any)
 that arise around it. Presumably $\boldsymbol{x}_i$ is a point in a very high
 dimensional space $\mathcal{X}$, perhaps analogous to a phase space in
 statistical mechanics.
@@ -108,6 +139,7 @@ P(\neg B \given \boldsymbol{\theta}) &= 1 - \theta_G \phi_G \epsilon
 \end{align}
 for a G star or 1 for an M star.
 
+Bad SIA-type likelihood:
 The probability of no occurrence of Brendon anywhere is
 \begin{align}
 P(\textnormal{no Brendon anywhere} \given \boldsymbol{\theta})
@@ -124,7 +156,26 @@ giving an approximation
 P(\textnormal{at least one Brendon} \given \boldsymbol{\theta})
     &\approx N_G \theta_G \phi_G \epsilon.
 \end{align}
-This is the FNC likelihood.
+This is the bad FNC likelihood.
+
+Good (?) likelihood:
+The probability of a consciousness anywhere is
+\begin{align}
+P(\textnormal{at least one consciousness} \given \boldsymbol{\theta})
+    &= 1 - \left(1 - \theta_G \phi_G \right)^{N_G}
+           \left(1 - \theta_M \phi_M \right)^{N_M}.
+\end{align}
+Given that there is a consciousness anywhere, assume a probability distribution
+$p(n_G, n_M \given \boldsymbol{\theta})$ for the number of them.
+\begin{align}
+P(\textnormal{at least one consciousness}, n \given \boldsymbol{\theta})
+    &= \left[1 - \left(1 - \theta_G \phi_G \right)^{N_G}
+           \left(1 - \theta_M \phi_M \right)^{N_M}\right]p(n_G, n_M \given \boldsymbol{\theta}).
+\end{align}
+
+
+\section*{Components Analogy}
+
 
 
 \end{document}
