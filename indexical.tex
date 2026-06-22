@@ -108,8 +108,64 @@ p(\theta, \phi, \textnormal{Brendon exists},
     \left(1 - (1 - \theta\phi)^{N_*}\right)
 \epsilon.
 \end{align}
-I will call $\left(1 - (1 - \theta\phi)^{N_*}\right)$ the full indexical
+I will call $\left(1 - (1 - \theta\phi)^{N_*}\right)\epsilon$ the full indexical
 conditioning (FIC) likelihood.
+
+\section{Australia and China}
+Let $N_A$ be the population of Australia and let $N_C$ be the population of
+China. Consider the joint probability distribution over these unknowns
+and also my memories' existence and selection (both of which are binary
+variables).
+\begin{align}
+p(N_A, N_C, \textnormal{existence}, \textnormal{selection})
+    &= p(N_A, N_C)P(\textnormal{existence} \given N_A, N_C)
+            P(\textnormal{selection} \given \textnormal{existence}, N_A, N_C)\\
+    &= p(N_A, N_C)\left(\epsilon N_A\right)
+            \left(\frac{1}{N_A + N_C}\right).
+\end{align}
+This gives exactly the SSA likelihood. Conversely, FNC gives $N_A\epsilon$
+only.
+
+
+\section{G and M Stars}
+Suppose we now have separate parameters for $G$ and $M$ stars,
+which are $\theta_G$, $\phi_G$, $\theta_M$, and $\phi_M$, and the numbers of
+such stars are $N_G$ and $N_M$, with $N_* = N_G + N_M$.
+Let BE=`Brendon exists', BR=`Brendon returned'.
+Then we have
+\begin{align}
+p(\theta, \phi, \boldsymbol{n}, \textnormal{BE},
+  \textnormal{BR}) &\propto
+    p(\theta_G, \phi_G, \theta_M, \phi_M)
+    \prod_{i=1}^{N_G} p(n_i \given \theta_G, \phi_G)
+    \prod_{i=N_G+1}^{N_*} p(n_i \given \theta_M, \phi_M)
+        P(\textnormal{BE} \given \boldsymbol{n})
+                P(\textnormal{BR} \given \textnormal{BE})\\
+    &=     p(\theta_G, \phi_G, \theta_M, \phi_M)
+    \prod_{i=1}^{N_G} p(n_i \given \theta_G, \phi_G)
+    \prod_{i=N_G+1}^{N_*} p(n_i \given \theta_M, \phi_M)
+        \left(\epsilon\sum_{i=1}^{N_G}n_i\right) \\
+    &\times
+        \left\{
+        \begin{array}{lr}
+        \frac{1}{\sum_{i=1}^{N_*} n_i}, &\sum_{i=1}^{N_*} n_i \geq 1 \\
+        0, &\textnormal{otherwise}.
+        \end{array}
+        \right.
+\end{align}
+Marginalising out $\boldsymbol{n}$, and assuming that the expected
+number of observers around each G and M star that has observers
+is a constant, gives
+\begin{align}
+p(\theta, \phi, \textnormal{BE},
+  \textnormal{BR}) &\propto
+    p(\theta_G, \phi_G, \theta_M, \phi_M)
+    \left(1 - (1-\theta_G\phi_G)^{N_G}(1 - \theta_M\phi_M)^{N_M}\right)
+    \frac{N_G\theta_G\phi_G}{N_G\theta_G\phi_G + N_M\theta_M\phi_M}.
+\end{align}
+which is a mild indication term for consciousness anywhere, multiplied
+by an SSA term (Kipping style) for G vs M stars.
+
 
 
 
