@@ -190,6 +190,16 @@ Reading this, we can see that conditional on $\alpha$ the posterior over
 $\lambda$ will itself be a Gamma density if we assign a flat or a log-uniform
 prior over $\lambda$.
 
+\section{Doomsday}
+My birth rank is $k$ and I know the value, so it's part of `Brendon exists'.
+Total population is $N$.
+\begin{align}
+P(N \given BE, BR) &\propto p(N)p(BE, BR \given N) \\
+    &= p(N)p(BE \given N)p(BR \given BE, N) \\
+    &= p(N)\epsilon \times \frac{1}{N},
+\end{align}
+which agrees with SSA and not FNC. There is no `indication' factor
+in $p(BE \given N)$ because my memories by definition can only be at slot $k$.
 
 \end{document}
 
