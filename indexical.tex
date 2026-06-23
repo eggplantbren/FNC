@@ -167,6 +167,25 @@ which is a mild indication term for consciousness anywhere, multiplied
 by an SSA term (Kipping style) for G vs M stars.
 
 
+\section{13.8 Gyr}
+Suppose conscious observers arise in the universe with probability distribution
+$f(t)$ for the time $t$. We will just use SSA here, any indication term would
+relate presumably to the normalisation of $f$.
+The likelihood function is just $f(13.8)$. We can probably do some inference
+analytically. Suppose $f(t)$ is a Gamma density
+\begin{align}
+f(t \given \alpha, \lambda) &= \frac{\lambda^{\alpha}}{\Gamma(\alpha)}
+    t^{\alpha-1}\exp(-\lambda t).
+\end{align}
+Therefore the posterior will be given by
+\begin{align}
+p(\alpha, \lambda \given t) &\propto
+    p(\alpha, \lambda)\frac{\lambda^{\alpha}}{\Gamma(\alpha)}
+        13.8^{\alpha-1}\exp(-13.8\lambda).
+\end{align}
+Reading this, we can see that conditional on $\alpha$ the posterior over
+$\lambda$ will itself be a Gamma density if we assign a flat or a log-uniform
+prior over $\lambda$.
 
 
 \end{document}
