@@ -172,16 +172,19 @@ Suppose conscious observers arise in the universe with probability distribution
 $f(t)$ for the time $t$. We will just use SSA here, any indication term would
 relate presumably to the normalisation of $f$.
 The likelihood function is just $f(13.8)$. We can probably do some inference
-analytically. Suppose $f(t)$ is a Gamma density
+analytically. Suppose $f(t)$ is a lognormal density
 \begin{align}
-f(t \given \alpha, \lambda) &= \frac{\lambda^{\alpha}}{\Gamma(\alpha)}
-    t^{\alpha-1}\exp(-\lambda t).
+f(t \given \mu, \sigma) &= \frac{1}{t\sigma\sqrt{2\pi}}
+    \exp\left(-\frac{1}{2\sigma^2}\left(\log(t) - \log(\mu)\right)^2\right).
 \end{align}
+I have parameterised it by the median time $\mu$ and the standard deviation
+of $\log(t)$, which is $\sigma$.
+
 Therefore the posterior will be given by
 \begin{align}
-p(\alpha, \lambda \given t) &\propto
-    p(\alpha, \lambda)\frac{\lambda^{\alpha}}{\Gamma(\alpha)}
-        13.8^{\alpha-1}\exp(-13.8\lambda).
+p(\mu, \sigma \given t) &\propto
+    p(\mu, \sigma) \frac{1}{\sigma}
+    \exp\left(-\frac{1}{2\sigma^2}\left(\log(13.8) - \log(\mu)\right)^2\right)
 \end{align}
 Reading this, we can see that conditional on $\alpha$ the posterior over
 $\lambda$ will itself be a Gamma density if we assign a flat or a log-uniform
